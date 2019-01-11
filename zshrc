@@ -111,3 +111,5 @@ cd_ls()
 alias cd="cd_ls"
 alias v="vim"
 alias c="cd ~/Codes"
+alias vrc="v ~/.vimrc"
+alias zrc="v ~/.zshrc"

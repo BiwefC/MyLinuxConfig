@@ -8,6 +8,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tomasr/molokai'
+Plugin 'scrooloose/nerdcommenter'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -27,7 +29,7 @@ Plugin 'scrooloose/nerdtree'
 " All of your Plugins must be added before the following line
 call vundle#end() " required
 filetype plugin indent on " required
-" To ignore plugin indent changes, instead use:
+"" To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
 " Brief help
@@ -42,12 +44,29 @@ filetype plugin indent on " required
 " ------------------------------------------
 " My Config
 " ------------------------------------------
-set tabstop=4
+set tabstop=4           " Set tab to 4 space.
 set expandtab
+set shiftwidth=4        " Set auto tab to 4 space.
+set cursorline          " Highlight the line cursor.
+set cursorcolumn        " Highlight the column cursor.
+set nu                  " Show line number.
+set mouse=a             " Let use mouse true.
+set hlsearch            " Highlight the search results.
 
+set t_Co=256            " Set vi to 256-bits colors.
+colorscheme  molokai
+
+" Highlight the redundant spaces and tabs.
+highlight RedundantSpaces ctermbg=red guibg=red
+match RedundantSpaces /\s\+$\| \+\ze\t\|\t/
 
 " ------------------------------------------
 " NERDTree Config
 " ------------------------------------------
 map <F3> :NERDTreeToggle<CR>
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" ------------------------------------------
+" NERDCommenter
+" ------------------------------------------
+let g:NERDSpaceDelims=1
