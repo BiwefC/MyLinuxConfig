@@ -52,9 +52,17 @@ set cursorcolumn        " Highlight the column cursor.
 set nu                  " Show line number.
 set mouse=a             " Let use mouse true.
 set hlsearch            " Highlight the search results.
+set scrolloff=999       " Let curor in half of screen.
 
 set t_Co=256            " Set vi to 256-bits colors.
 colorscheme  molokai
+
+" Autocomplete the symbol
+inoremap ' ''<ESC>i
+inoremap " ""<ESC>i
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {<CR>}<ESC>O
 
 " Highlight the redundant spaces and tabs.
 highlight RedundantSpaces ctermbg=red guibg=red
