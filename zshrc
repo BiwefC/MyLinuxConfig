@@ -110,8 +110,11 @@ cd_ls()
 
 alias cd="cd_ls"
 alias v="vim"
+alias g="gvim"
 alias c="cd ~/Codes"
 alias vrc="v ~/.vimrc"
 alias zrc="v ~/.zshrc"
 alias reboot="sudo reboot"
 alias shutdown="sudo shutdown"
+alias iccad="cd ~/Codes/ICCAD"
+alias myconfig="cd ~/Codes/MyLinuxConfig"

@@ -10,6 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomasr/molokai'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'jiangmiao/auto-pairs'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -50,6 +51,7 @@ set shiftwidth=4        " Set auto tab to 4 space.
 set cursorline          " Highlight the line cursor.
 set cursorcolumn        " Highlight the column cursor.
 set nu                  " Show line number.
+set rnu                 " Show relative line number.
 set mouse=a             " Let use mouse true.
 set hlsearch            " Highlight the search results.
 set scrolloff=999       " Let curor in half of screen.
@@ -57,12 +59,18 @@ set scrolloff=999       " Let curor in half of screen.
 set t_Co=256            " Set vi to 256-bits colors.
 colorscheme  molokai
 
+" Uncomment the following to have Vim jump to the last position when
+" reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
 " Autocomplete the symbol
-inoremap ' ''<ESC>i
-inoremap " ""<ESC>i
-inoremap ( ()<ESC>i
-inoremap [ []<ESC>i
-inoremap { {<CR>}<ESC>O
+"inoremap ' ''<ESC>i
+"inoremap " ""<ESC>i
+"inoremap ( ()<ESC>i
+"inoremap [ []<ESC>i
+"inoremap { {<CR>}<ESC>O
 
 " Highlight the redundant spaces and tabs.
 highlight RedundantSpaces ctermbg=red guibg=red
@@ -75,6 +83,7 @@ map <F3> :NERDTreeToggle<CR>
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " ------------------------------------------
-" NERDCommenter
+" NERDCommenter Config
 " ------------------------------------------
 let g:NERDSpaceDelims=1
+
