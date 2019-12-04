@@ -6,11 +6,14 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'                 " Bundle Manager
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomasr/molokai'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'AutoComplPop'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -45,9 +48,10 @@ filetype plugin indent on " required
 " ------------------------------------------
 " My Config
 " ------------------------------------------
-set tabstop=4           " Set tab to 4 space.
+set tabstop=2           " Set tab to 2 space.
 set expandtab
-set shiftwidth=4        " Set auto tab to 4 space.
+set autoindent
+set shiftwidth=2        " Set auto tab to 2 space.
 set cursorline          " Highlight the line cursor.
 set cursorcolumn        " Highlight the column cursor.
 set nu                  " Show line number.
@@ -71,6 +75,8 @@ endif
 "inoremap ( ()<ESC>i
 "inoremap [ []<ESC>i
 "inoremap { {<CR>}<ESC>O
+imap <C-CR> <ESC>o
+imap <C-l> <RIGHT>
 
 " Highlight the redundant spaces and tabs.
 highlight RedundantSpaces ctermbg=red guibg=red
