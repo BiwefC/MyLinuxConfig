@@ -58,7 +58,7 @@ set nu                  " Show line number.
 set rnu                 " Show relative line number.
 set mouse=a             " Let use mouse true.
 set hlsearch            " Highlight the search results.
-set scrolloff=999       " Let curor in half of screen.
+set scrolloff=16        " Let curor in half of screen.
 
 set t_Co=256            " Set vi to 256-bits colors.
 colorscheme  molokai
@@ -98,3 +98,9 @@ let g:NERDSpaceDelims=1
 " auto-pairs Config
 " ------------------------------------------
 let g:AutoPairsFlyMode=1
+
+
+" ------------------------------------------
+" Source User Config
+" ------------------------------------------
+source ~/.vimrc_user
