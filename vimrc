@@ -14,6 +14,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'AutoComplPop'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'takac/vim-hardtime'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -59,6 +60,7 @@ set rnu                 " Show relative line number.
 set mouse=a             " Let use mouse true.
 set hlsearch            " Highlight the search results.
 set scrolloff=16        " Let curor in half of screen.
+set ignorecase          " Ignore the case when search
 
 set t_Co=256            " Set vi to 256-bits colors.
 colorscheme  molokai
@@ -91,13 +93,21 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " ------------------------------------------
 " NERDCommenter Config
 " ------------------------------------------
-let g:NERDSpaceDelims=1
+let g:NERDSpaceDelims = 1
 
 
 " ------------------------------------------
 " auto-pairs Config
 " ------------------------------------------
-let g:AutoPairsFlyMode=1
+" let g:AutoPairsFlyMode = 1
+
+" ------------------------------------------
+" hardtime Config
+" ------------------------------------------
+let g:hardtime_default_on = 0
+let g:hardtime_allow_different_key = 1
+let g:list_of_visual_keys = []
+let g:hardtime_showmsg = 1
 
 
 " ------------------------------------------
